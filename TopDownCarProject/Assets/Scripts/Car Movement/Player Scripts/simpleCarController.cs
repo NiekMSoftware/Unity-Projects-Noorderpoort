@@ -9,9 +9,10 @@ public class simpleCarController : MonoBehaviour
 
     public float motorPower;
     public float steerPower;
+    public float playerDistance;
 
     public GameObject centerOfMass;
-    public Rigidbody rb;
+    private Rigidbody rb;
 
     private void Start()
     {
@@ -25,7 +26,16 @@ public class simpleCarController : MonoBehaviour
         {
             wheel.motorTorque = Input.GetAxis("Vertical") * ((motorPower * 5) / 4);
         }
-
+        if (Input.GetAxis("Vertical") == 0)
+        {
+            rb.drag = 1;
+            rb.angularDrag = 1;
+        }
+        else
+        {
+            rb.drag = 0;
+            rb.angularDrag = 0;
+        }
         for (int i = 0; i < wheels.Length; i++)
         {
             if (i < 2)
@@ -34,5 +44,4 @@ public class simpleCarController : MonoBehaviour
             }
         }
     }
-    
 }

@@ -7,6 +7,7 @@ public class AIRemoteControl3D : MonoBehaviour
     [SerializeField] private Transform targetPositionTransform;
 
     BasicCarController basicCarController;
+    public float aiDistance;
 
 
     private void Awake()

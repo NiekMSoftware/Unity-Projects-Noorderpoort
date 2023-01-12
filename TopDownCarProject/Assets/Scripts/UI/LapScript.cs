@@ -11,8 +11,10 @@ public class LapScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("object detected");
         if (other.gameObject.CompareTag("Player"))
         {
+            print("player detected");
             AddLap();
         }
     }
@@ -22,7 +24,7 @@ public class LapScript : MonoBehaviour
         LapNumber.text = Lap.ToString();
         if(Lap > 3)
         {
-            SceneManager.LoadScene("MainMenu");
+            // SceneManager.LoadScene("MainMenu");
         }
     }
 }
