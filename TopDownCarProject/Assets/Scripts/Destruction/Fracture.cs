@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Fracture : MonoBehaviour
 {
-
     public GameObject fractured;
     GameObject fractureContainer;
     public float breakForce;
@@ -25,7 +24,7 @@ public class Fracture : MonoBehaviour
 
     void BreakTheThing()
     {
-        fractureContainer = Instantiate(fractured, transform.position, transform.rotation);
+        fractureContainer = Instantiate(fractured, transform.position, transform.rotation);        
         foreach (Rigidbody rb in fractured.GetComponentsInChildren<Rigidbody>())
         {
             Vector3 force = (rb.transform.position - transform.position).normalized * breakForce;

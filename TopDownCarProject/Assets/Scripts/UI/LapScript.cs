@@ -11,10 +11,8 @@ public class LapScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("object detected");
         if (other.gameObject.CompareTag("Player"))
         {
-            print("player detected");
             AddLap();
         }
     }
