@@ -45,7 +45,6 @@ public class PauseMenu : MonoBehaviour
     public void LoadOptions()
     {
         Time.timeScale = 0f;
-        Debug.Log("Opened options menu...");
     }
 
     public void QuitGame()

@@ -9,6 +9,9 @@ public class LapScript : MonoBehaviour
     public Text LapNumber;
     public int Lap = 1;
 
+    public GameObject speedometer;
+    public GameObject lapCounter;
+    public GameObject finished;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -22,7 +25,10 @@ public class LapScript : MonoBehaviour
         LapNumber.text = Lap.ToString();
         if(Lap > 3)
         {
-            // SceneManager.LoadScene("MainMenu");
+            speedometer.SetActive(false);
+            lapCounter.SetActive(false);
+            Time.timeScale = 0f;
+            finished.SetActive(true);
         }
     }
 }
