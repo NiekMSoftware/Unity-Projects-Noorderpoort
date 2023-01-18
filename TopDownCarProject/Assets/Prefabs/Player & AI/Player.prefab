@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 8996060201419524719}
   - component: {fileID: 8996060201419524705}
   - component: {fileID: 8996060201419524718}
-  - component: {fileID: 9185320608663807053}
+  - component: {fileID: -646077103690762590}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -404,7 +404,7 @@ MonoBehaviour:
   steerPower: 27
   playerDistance: 0
   centerOfMass: {fileID: 8996060201324573948}
---- !u!114 &9185320608663807053
+--- !u!114 &-646077103690762590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,11 +413,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8996060201419524716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c82d80e26ec0af45aa159629f06e4d8, type: 3}
+  m_Script: {fileID: 11500000, guid: cf6e80f5ca84e4d47b1b90b060506d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUser: 
-  userText: {fileID: 0}
+  userInputText: {fileID: 8239155178373953979}
 --- !u!1 &8996060201496119589
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +692,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8996060203221011635}
-  m_LocalRotation: {x: 0.23110436, y: -0.000000016740584, z: 0.0000000039764694, w: 0.972929}
+  m_LocalRotation: {x: 0.23110436, y: 0.000000016740584, z: -0.0000000039764694, w: 0.972929}
   m_LocalPosition: {x: 0, y: 3.6200001, z: -7.1900024}
   m_LocalScale: {x: 1, y: 1.1632686, z: 0.9091054}
   m_ConstrainProportionsScale: 0

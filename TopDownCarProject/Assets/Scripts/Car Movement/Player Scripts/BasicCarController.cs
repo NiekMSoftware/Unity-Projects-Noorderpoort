@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -16,6 +17,7 @@ public class BasicCarController : MonoBehaviour
     [SerializeField]    
     Rigidbody rb;
     bool isGrounded;
+    public bool isBraking;
 
     [Header("Level Variables")]
     public GameObject[] checkPoints;
@@ -59,19 +61,25 @@ public class BasicCarController : MonoBehaviour
                 speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
                 rb.drag = Mathf.Lerp(rb.drag, 0, Time.deltaTime);
             }
-            else
+            else if (isBraking && throttle == 0)
             {
+                isBraking = true;
                 speed = Mathf.Lerp(speed, 0, Time.deltaTime);
-                rb.drag = Mathf.Lerp(rb.drag, 10, Time.deltaTime);
+                rb.drag = Mathf.Lerp(rb.drag, 10, Time.deltaTime);   
             }
 
             Vector3 velocity = Vector3.forward * speed;
             rb.AddRelativeForce(velocity, ForceMode.Acceleration);
         }
     }
+    
     public void Turn(float direction)
     {
         transform.Rotate(0, direction * turnSpeed * Time.deltaTime, 0);
+        if (isBraking)
+        {
+            speed = speed * 0.5f;
+        }
     }
     
     public GameObject NextCheckpoint()

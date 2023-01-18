@@ -24,18 +24,42 @@ public class simpleCarController : MonoBehaviour
     {
         foreach (var wheel in wheels)
         {
+            /*
+             * Add power going forward for the wheels
+             */
             wheel.motorTorque = Input.GetAxis("Vertical") * ((motorPower * 5) / 4);
+            
+            /*
+             * Apply a handbreak
+             */
+            if (Input.GetButton("Jump"))
+            {
+                rb.drag = 1;
+                rb.angularDrag = 1;
+            }
+            if (!Input.GetButton("Jump"))
+            {
+                rb.drag = 0;
+                rb.angularDrag = 0;
+            }
         }
-        if (Input.GetAxis("Vertical") == 0)
-        {
-            rb.drag = 1;
-            rb.angularDrag = 1;
-        }
-        else
+        /*
+       * If there is no given input left
+       */
+        if (Input.GetAxis("Vertical") == 1 && !Input.GetButton("Jump"))
         {
             rb.drag = 0;
             rb.angularDrag = 0;
         }
+        else
+        {
+            rb.drag = 0.5f;
+            rb.angularDrag = 0.5f;
+        }
+
+        /*
+         * Apply steering
+         */
         for (int i = 0; i < wheels.Length; i++)
         {
             if (i < 2)

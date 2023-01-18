@@ -8,19 +8,13 @@ using UnityEngine.UI;
 
 public class UsernameDisplay : MonoBehaviour
 {
-    public string textUser;
-    private GameObject userOfText;
+   void Start()
+   {
+      
+   }
 
-    public Text userText;
-    private NameTransfer _nameTransfer;
-
-    private void Awake()
-    {
-        _nameTransfer = GetComponent<NameTransfer>();
-    }
-
-    private void Update()
-    {
-        
-    }
+   private void Update()
+   {
+      
+   }
 }

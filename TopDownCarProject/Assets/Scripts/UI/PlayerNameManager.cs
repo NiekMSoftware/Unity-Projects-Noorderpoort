@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerNameManager : MonoBehaviour
 {
-    static public InputField usernameInput;
-    static public string userInput;
+     public InputField usernameInput;
+     public string userInput;
     
     public void UserNameChanged()
     {
