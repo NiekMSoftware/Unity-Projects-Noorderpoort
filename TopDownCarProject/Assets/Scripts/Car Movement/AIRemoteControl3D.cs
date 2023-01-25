@@ -8,8 +8,7 @@ public class AIRemoteControl3D : MonoBehaviour
 
     BasicCarController basicCarController;
     public float aiDistance;
-
-
+    public float widthAccuracy = 20;
     private void Awake()
     {
         basicCarController = GetComponent<BasicCarController>();
@@ -37,12 +36,12 @@ public class AIRemoteControl3D : MonoBehaviour
 
         float angle = Vector3.SignedAngle(transform.forward, directionToTarget, Vector3.up);
 
-        if (angle > 5)
-        {
-            turn = 1;
+        if (angle > widthAccuracy) 
+        { 
+            turn = 1; 
         }
-        else if (angle < -5)
-        {
+        else if (angle < -widthAccuracy) 
+        { 
             turn = -1;
         }
         

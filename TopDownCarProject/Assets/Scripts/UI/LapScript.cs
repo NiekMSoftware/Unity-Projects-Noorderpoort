@@ -18,6 +18,11 @@ public class LapScript : MonoBehaviour
         {
             AddLap();
         }
+
+        if (other.gameObject.CompareTag("AI"))
+        {
+            AddLap();
+        }
     }
     private void AddLap()
     {
@@ -25,10 +30,15 @@ public class LapScript : MonoBehaviour
         LapNumber.text = Lap.ToString();
         if(Lap > 3)
         {
-            speedometer.SetActive(false);
-            lapCounter.SetActive(false);
-            Time.timeScale = 0f;
-            finished.SetActive(true);
+            Finished();
         }
+    }
+
+    void Finished()
+    {
+        speedometer.SetActive(false);
+        lapCounter.SetActive(false);
+        Time.timeScale = 0f;
+        finished.SetActive(true);
     }
 }
