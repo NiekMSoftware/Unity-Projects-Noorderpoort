@@ -9,6 +9,7 @@ TagManager:
   - Checkpoint
   - PlayerCheckpoint
   - BrakePoint
+  - Water
   layers:
   - Default
   - TransparentFX

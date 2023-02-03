@@ -37,12 +37,15 @@ public class simpleCarController : MonoBehaviour
                 rb.drag = 1;
                 rb.angularDrag = 1;
             }
+            
+            //Disable handbreak
             if (!Input.GetButton("Jump"))
             {
                 rb.drag = 0;
                 rb.angularDrag = 0;
             }
         }
+        
         /*
        * If there is no given input left
        */

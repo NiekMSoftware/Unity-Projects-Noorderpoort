@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 public class BasicCarController : MonoBehaviour
 {
 
-    [FormerlySerializedAs("KMH")] [Header("Basic Car Variables")]
+    [Header("Basic Car Variables")]
     public float maxSpeed = 100;
     public float turnSpeed = 25;
     public float accel = 2.5f;

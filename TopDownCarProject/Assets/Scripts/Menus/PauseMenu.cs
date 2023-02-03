@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
 
+    public bool circuit1;
+    public bool circuit2;
+
     public GameObject pauseMenuUI;
     
     void Update()
@@ -24,7 +27,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
+    
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -56,6 +59,14 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Circuit1");
+        if (circuit1)
+        {
+            SceneManager.LoadScene("Circuit1");
+        }
+
+        if (circuit2)
+        {
+            SceneManager.LoadScene("Circuit2");
+        }
     }
 }

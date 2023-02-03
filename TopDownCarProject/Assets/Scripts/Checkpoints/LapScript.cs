@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LapScript : MonoBehaviour
 {
-    public Text LapNumber;
+    public TMP_Text LapNumber;
     public int Lap = 1;
 
     public GameObject speedometer;
@@ -14,12 +15,7 @@ public class LapScript : MonoBehaviour
     public GameObject finished;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            AddLap();
-        }
-
-        if (other.gameObject.CompareTag("AI"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("AI"))
         {
             AddLap();
         }

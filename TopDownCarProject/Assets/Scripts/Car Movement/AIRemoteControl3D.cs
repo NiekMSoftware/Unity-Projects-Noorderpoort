@@ -36,6 +36,7 @@ public class AIRemoteControl3D : MonoBehaviour
 
         float angle = Vector3.SignedAngle(transform.forward, directionToTarget, Vector3.up);
 
+        //Make the car turn in the direction of the CP
         if (angle > widthAccuracy) 
         { 
             turn = 1; 
@@ -44,15 +45,13 @@ public class AIRemoteControl3D : MonoBehaviour
         { 
             turn = -1;
         }
-        
-
-
         basicCarController.ChangeSpeed(forwards);
         basicCarController.Turn(turn);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Next CP if the AI hit one
         if (other.CompareTag("Checkpoint"))
         {
             targetPositionTransform = basicCarController.NextCheckpoint().transform;
